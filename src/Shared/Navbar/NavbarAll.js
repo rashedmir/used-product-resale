@@ -7,7 +7,7 @@ const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <div className='font2'>
-            <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-transparent mb-3 font2">
+            <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-black mb-3 font2">
                 <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
                     <div className="w-full flex justify-between relative lg:w-auto lg:static lg:block lg:justify-start">
                         <a href='/'><img src={logo} className="w-60" alt="/" /></a>
