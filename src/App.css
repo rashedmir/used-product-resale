@@ -7,6 +7,21 @@
   pointer-events: none;
 }
 
+.font1{
+  font-family: 'Montserrat', sans-serif;
+}
+.font2{
+  font-family: 'Prompt', sans-serif;
+}
+.font3{
+  font-family: 'Courgette', cursive;
+}
+.font4{
+  font-family: 'Cormorant Garamond', serif;
+}
+
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
