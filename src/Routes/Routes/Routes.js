@@ -6,6 +6,7 @@ import LuxuryWatches from '../../Pages/LuxuryWatches/LuxuryWatches';
 import Omega from '../../Pages/Omega/Omega';
 import Rolex from '../../Pages/Rolex/Rolex';
 import VintageRolex from '../../Pages/VintageRolex/VintageRolex';
+import Login from '../../Pages/Login/Login'
 
 export const routes = createBrowserRouter([
     {
@@ -33,9 +34,12 @@ export const routes = createBrowserRouter([
                 element: <VintageRolex></VintageRolex>
             },
         ]
-
-        
+    },
+    {
+        path: '/login',
+        element: <Login></Login>
     }
+
 ])
 
 export default routes;

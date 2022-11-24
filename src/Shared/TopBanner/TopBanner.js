@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import certified from '../../assets/certified.png'
 
 const TopBanner = () => {
@@ -9,7 +10,10 @@ const TopBanner = () => {
                     <h2>Free Overnight Shipping</h2>
                     <div className='flex'>
                         <img className='w-5 mx-2' src={certified} alt='' />
-                        <h2>100% Certified Authentic</h2>
+                        <h2 className='mr-5'>100% Certified Authentic</h2>
+                        <Link to='/login'><h2 className='mr-2'>Login</h2></Link>
+                        <h2 className='mr-2'>|</h2>
+                        <Link to='/signup'><h2>Sign Up</h2></Link>
                     </div>
                 </div>
             </div>
