@@ -10,21 +10,16 @@ video {
     object-fit: cover;
 }
 
-.frame {
-  width: 90%;
-  margin: 40px auto;
-  text-align: center;
-}
 button {
   margin: 20px;
   outline: none;
 }
 .custom-btn {
   width: 130px;
-  height: 40px;
+  height: 60px;
   padding: 10px 25px;
   border: 2px solid rgb(255, 255, 255);
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   background: transparent;
   cursor: pointer;
@@ -34,12 +29,12 @@ button {
 }
 
 .btn-8 {
-   line-height: 40px;
+  line-height: 40px;
   padding: 0;
   background: transparent;
   position: relative;
   z-index: 2;
-  color: #fff;
+  color: rgb(0, 0, 0);
   -webkit-perspective: 300px;
   perspective: 300px;
   -webkit-transform-style: preserve-3d;
@@ -49,7 +44,7 @@ button {
   color: rgb(255, 255, 255);
 }
 .btn-8:after {
-  border-radius: 15px;
+  border-radius: 30px;
   position: absolute;
   content: "";
   top: 0;

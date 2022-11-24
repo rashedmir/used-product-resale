@@ -16,9 +16,9 @@ const Main = () => {
                     <div className='text-white mt-64 mx-44'>
                         <h1 className='text-5xl font3 mb-3'>The preowned</h1>
                         <h1 className='text-8xl font4 font-semibold'>Watch Exchange</h1>
-                        <div className='mt-5 font-bold font1 frame'>
+                        <div className='mt-5 font-bold'>
                             <button className='bg-white rounded-full mr-10 text-black py-5 px-6 custom-btn btn-8'>BUY WATCH</button>
-                            <button className='bg-white rounded-full mr-10 text-black py-5 px-6'>SELL WATCH</button>
+                            <button className='bg-white rounded-full mr-10 text-black py-5 px-6 custom-btn btn-8'>SELL WATCH</button>
                         </div>
                         <p className='text-xl font1 text-center mt-48'>One Man's Trash Another Man's Treasure</p>
                     </div>
