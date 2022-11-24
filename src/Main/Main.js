@@ -24,7 +24,7 @@ const Main = () => {
                     </div>
                 </div>
                 <div className='main'>
-                    <video src={video} autoPlay loop muted type='video/mp4' target='_blank'></video>
+                    <video src={video} autoPlay loop muted type='video/mp4'></video>
                 </div>
             </div>
         </div>
