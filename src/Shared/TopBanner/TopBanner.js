@@ -13,7 +13,7 @@ const TopBanner = () => {
         console.log(user.displayName);
     }
     return (
-        <div>
+        <div className='sticky top-0'>
             {
                 user ? (<><div className='bg-black'>
                     {

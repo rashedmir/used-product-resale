@@ -49,8 +49,8 @@ const AddProducts = () => {
         const date = new Date();
         const userID = user.uid;
         const userName = user.displayName;
-        const purchased = false;
-        const advertised = false;
+        const purchased = 'false';
+        const advertised = 'false';
         const field = event.target.name;
         const value = event.target.value;
         const newCategory = { ...category, date, userID, userName, purchased, advertised };
