@@ -30,19 +30,19 @@ const Navbar = () => {
                         <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 
                                 md:text-xl md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-gray-900 dark:border-white">
                             <li className="nav-item">
-                                <a href="/homepage/rolex" className="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
+                                <a href="/homepage/rolexmap" className="block py-2 pl-3 pr-4 text-white rounded md:bg-transparent md:p-0"
                                     aria-current="page">ROLEX</a>
                             </li>
                             <li className="nav-item">
-                                <a href="/homepage/omega" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 
+                                <a href="/homepage/omegamap" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 
                                 md:hover:text-blue-700 md:p-0">OMEGA</a>
                             </li>
                             <li className="nav-item">
-                                <a href="/homepage/luxurywatches" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent 
+                                <a href="/homepage/luxurywatchesmap" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent 
                                 md:border-0 md:hover:text-blue-700 md:p-0">LUXURY WATCHES</a>
                             </li>
                             <li>
-                                <a href="/homepage/vintagerolex" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent 
+                                <a href="/homepage/vintagerolexmap" className="block py-2 pl-3 pr-4 text-white rounded hover:bg-gray-100 md:hover:bg-transparent 
                                 md:border-0 md:hover:text-blue-700 md:p-0">VINTAGE ROLEX</a>
                             </li>
                         </ul>
