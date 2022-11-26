@@ -37,7 +37,7 @@ const TopBanner = () => {
                                         <h2 className='mr-5'>100% Certified Authentic</h2>
                                         <Link to='/homepage/addproducts'><h2 className='mr-2'>Add Products</h2></Link>
                                         <h2 className='mr-2'>|</h2>
-                                        <Link to='/homepage/myproductmap'><h2>My Products</h2></Link>
+                                        <Link to='/homepage/myproduct'><h2>My Products</h2></Link>
                                         <button onClick={handleLogOut} className='my-0 ml-10 text-white'>Log Out</button>
                                         <p>{user.displayName}</p>
                                     </div>
