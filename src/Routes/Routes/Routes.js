@@ -50,7 +50,12 @@ export const routes = createBrowserRouter([
                 path: '/homepage/myproduct',
                 element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>,
                 loader: () => fetch(`http://localhost:5000/watches`)
-            }
+            },
+            {
+                path: '/homepage/myproduct/:id',
+                element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>,
+                loader: (params) => fetch(`http://localhost:5000/watches/${params.id}`)
+            },
         ]
     },
     {

@@ -5,9 +5,12 @@ import Footer from '../Shared/Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar';
 import TopBanner from '../Shared/TopBanner/TopBanner';
 import './Main.css'
+import Subscribe from './Subscribe';
 
 const Main = () => {
     const watches = useLoaderData();
+    var count = 0;
+    console.log(count);
     return (
         <div>
             <TopBanner></TopBanner>
@@ -30,7 +33,7 @@ const Main = () => {
                     <video src={video} autoPlay loop muted type='video/mp4'></video>
                 </div>
             </div>
-           {/* All watches */}
+            {/* All watches */}
             <div>
                 <h2 className='mx-48 mt-10 text-2xl font1 font-bold'>SHOP</h2>
                 <h2 className='mx-48 mt-5 text-5xl font4 font-bold'>Rolex Watches</h2>
@@ -38,7 +41,7 @@ const Main = () => {
                     {
                         watches.map(watch => {
                             return (<div key={watch._id} className={`flex flex-wrap w-96 mb-5 py-2 ${watch.title == "Rolex" ? '' : 'hidden'}`}>
-                                {watch.title == "Rolex" && (<div class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                                {watch.title == "Rolex" && (<div class="flex flex-col max-w-sm">
 
                                     <div className='flex justify-center'>
                                         <a href="/">
@@ -68,7 +71,7 @@ const Main = () => {
                     {
                         watches.map(watch => {
                             return (<div key={watch._id} className={`flex flex-wrap w-96 mb-5 py-2 ${watch.title == "Omega" ? '' : 'hidden'}`}>
-                                {watch.title == "Omega" && (<div class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                                {watch.title == "Omega" && (<div class="flex flex-col max-w-sm">
 
                                     <div className='flex justify-center'>
                                         <a href="/">
@@ -98,7 +101,7 @@ const Main = () => {
                     {
                         watches.map(watch => {
                             return (<div key={watch._id} className={`flex flex-wrap w-96 mb-5 py-2 ${watch.title == "Luxury Watch" ? '' : 'hidden'}`}>
-                                {watch.title == "Luxury Watch" && (<div class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                                {watch.title == "Luxury Watch" && (<div class="flex flex-col max-w-sm">
 
                                     <div className='flex justify-center'>
                                         <a href="/">
@@ -128,7 +131,7 @@ const Main = () => {
                     {
                         watches.map(watch => {
                             return (<div key={watch._id} className={`flex flex-wrap w-96 mb-5 py-2 ${watch.title == "Vintage Rolex" ? '' : 'hidden'}`}>
-                                {watch.title == "Vintage Rolex" && (<div class="flex flex-col max-w-sm bg-white border border-gray-200 rounded-lg shadow-md">
+                                {watch.title == "Vintage Rolex" && (<div class="flex flex-col max-w-sm">
 
                                     <div className='flex justify-center'>
                                         <a href="/">
@@ -140,6 +143,45 @@ const Main = () => {
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Brand: {watch.title}</h5>
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Watch Name: {watch.name}</h5>
 
+                                        </a>
+
+                                    </div>
+                                </div>)
+
+                                }
+                            </div>)
+                        })
+                    }
+                </div>
+            </div>
+            <Subscribe></Subscribe>
+
+            <div>
+                <div className='text-white'>
+                    {
+                        watches.map(watch => { return (watch.advertised == "true" && (count = count + 1)) })
+                    }
+                </div>
+                {
+                    count > 0 && (<h2 className='mx-48 mt-5 mb-5 text-5xl font4 font-bold'>Advertisement</h2>)
+                }
+                {/* <h2 className='mx-48 mt-5 text-5xl font4 font-bold'>Advertisement</h2> */}
+                <div className='flex flex-wrap gap-10 w-full justify-around px-36'>
+                    {
+                        watches.map(watch => {
+                            return (<div key={watch._id} className={`flex flex-wrap w-96 mb-5 py-2 ${watch.advertised == "true" ? '' : 'hidden'}`}>
+                                {watch.advertised == "true" && (<div class="flex flex-col max-w-sm">
+
+                                    <div className='flex justify-center'>
+                                        <a href="/">
+                                            <img class="rounded-t-lg w-48 py-5 h-80" src={watch.picture} alt="" />
+                                        </a>
+                                    </div>
+                                    <div class="p-10">
+                                        <a href="/rolex">
+                                            <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Brand: {watch.title}</h5>
+                                            <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Watch Name: {watch.name}</h5>
+                                            <button className='bg-gray-700 w-full text-white ml-0 rounded p-3'>Book Now</button>
                                         </a>
 
                                     </div>

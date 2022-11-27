@@ -13,7 +13,7 @@ const AddProducts = () => {
     const [category, setCategory] = useState({});
 
     const navigate = useNavigate();
-    const from = '/homepage/myproductmap';
+    const from = '/homepage/myproduct';
 
     const handleAddService = event => {
         event.preventDefault();
@@ -40,7 +40,7 @@ const AddProducts = () => {
                     progress: undefined,
                 });
                 console.log(data);
-                
+
 
             })
     }
@@ -49,8 +49,8 @@ const AddProducts = () => {
         const date = new Date();
         const userID = user.uid;
         const userName = user.displayName;
-        const purchased = 'false';
-        const advertised = 'false';
+        const purchased = "false";
+        const advertised = "false";
         const field = event.target.name;
         const value = event.target.value;
         const newCategory = { ...category, date, userID, userName, purchased, advertised };
