@@ -1,0 +1,21 @@
+[
+  {
+    "index": 1,
+    "ques": "What are the different ways to manage a state in a React application?",
+    "ans": "There are four main types of state you need to properly manage in your React apps:1. Local state,2. Global state,3. Server state,4. URL state"
+  },
+  {
+    "index": 2,
+    "ques": "How does prototypical inheritance work?",
+    "ans": "The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the Prototype of an object, we use Object. getPrototypeOf and Object."
+  },
+  {
+    "index": 3,
+    "ques": "What is a unit test? Why should we write unit tests?",
+    "ans": "Unit Testing is a type of software testing where individual units or components of a software are tested.They enable you to catch bugs early in the development process. Automated unit tests help a great deal with regression testing. They detect code smells in your codebase. For example, if you're having a hard time writing unit tests for a piece of code, it might be a sign that your function is too complex." },
+  {
+    "index": 4,
+    "ques": "React vs. Angular vs. Vue??",
+    "ans": "Angular:Angular has a steep learning curve, considering it is a complete solution, and mastering Angular requires you to learn associated concepts like TypeScript and MVC. Even though it takes time to learn Angular, the investment pays dividends in terms of understanding how the front end works.React:React offers a Getting Started guide that should help one set up React in about an hour. The documentation is thorough and complete, with solutions to common issues already present on Stack Overflow. React is not a complete framework and advanced features require the use of third-party libraries. This makes the learning curve of the core framework not so steep but depends on the path you take with additional functionality. However, learning to use React does not necessarily mean that you are using the best practices.Vue:Vue provides higher customizability and hence is easier to learn than Angular or React. Further, Vue has an overlap with Angular and React with respect to their functionality like the use of components. Hence, the transition to Vue from either of the two is an easy option. However, simplicity and flexibility of Vue is a double-edged sword — it allows poor code, making it difficult to debug and test."
+  }
+]

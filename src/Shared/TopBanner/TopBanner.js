@@ -21,6 +21,7 @@ const TopBanner = () => {
                             <h2>Free Overnight Shipping</h2>
                             <div className='flex items-center'>
                                 <img className='w-5 mx-2' src={certified} alt='' />
+                                <Link to='/homepage/blog'><h2>Blog</h2></Link>
                                 <h2 className='mr-5'>100% Certified Authentic</h2>
                                 <Link to=''><h2 className='mr-2'>All Seller</h2></Link>
                                 <h2 className='mr-2'>|</h2>
@@ -34,6 +35,7 @@ const TopBanner = () => {
                                     <h2>Free Overnight Shipping</h2>
                                     <div className='flex items-center'>
                                         <img className='w-5 mx-2' src={certified} alt='' />
+                                        <Link to='/homepage/blog'><h2>Blog</h2></Link>
                                         <h2 className='mr-5'>100% Certified Authentic</h2>
                                         <Link to='/homepage/addproducts'><h2 className='mr-2'>Add Products</h2></Link>
                                         <h2 className='mr-2'>|</h2>
@@ -45,8 +47,9 @@ const TopBanner = () => {
                                     <h2>Free Overnight Shipping</h2>
                                     <div className='flex items-center'>
                                         <img className='w-5 mx-2' src={certified} alt='' />
+                                        <Link to='/homepage/blog'><h2>Blog</h2></Link>
                                         <h2 className='mr-5'>100% Certified Authentic</h2>
-                                            <Link to='/homepage/myorders'><h2 className='mr-2'>My Orders</h2></Link>
+                                        <Link to='/homepage/myorders'><h2 className='mr-2'>My Orders</h2></Link>
                                         <button onClick={handleLogOut} className='my-0 ml-10 text-white'>Log Out</button>
                                         <p>{user.displayName}</p>
                                     </div>
@@ -59,6 +62,7 @@ const TopBanner = () => {
                     <div className='font1 text-sm py-3 mx-48 flex justify-between text-white'>
                         <h2>Free Overnight Shipping</h2>
                         <div className='flex'>
+                            <Link to='/homepage/blog'><h2>Blog</h2></Link>
                             <img className='w-5 mx-2' src={certified} alt='' />
                             <h2 className='mr-5'>100% Certified Authentic</h2>
                             <Link to='/login'><h2 className='mr-2'>Login</h2></Link>

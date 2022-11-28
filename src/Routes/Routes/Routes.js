@@ -12,6 +12,7 @@ import Rolex from '../../Pages/Rolex/Rolex';
 import LuxuryWatches from '../../Pages/LuxuryWatches/LuxuryWatches'
 import MyProducts from '../../Pages/MyProducts/MyProducts'
 import MyOrders from '../../Pages/BookingModal/MyOrders';
+import Blog from '../../Blog/Blog';
 
 
 export const routes = createBrowserRouter([
@@ -83,6 +84,10 @@ export const routes = createBrowserRouter([
                 element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>,
                 loader: (params) => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/bookings`)
             },
+            {
+                path: '/homepage/blog',
+                element: <Blog></Blog>
+            }
         ]
     },
     {
