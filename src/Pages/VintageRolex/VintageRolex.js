@@ -43,7 +43,7 @@ const VintageRolex = () => {
             watch_picture
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://b612-used-products-resale-server-side-rashedmir.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

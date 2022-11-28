@@ -44,7 +44,7 @@ const LuxuryWatches = () => {
             watch_picture
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://b612-used-products-resale-server-side-rashedmir.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -101,7 +101,7 @@ const LuxuryWatches = () => {
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Years of use: {date.getFullYear() - watch.year_of_purchase}</h5>
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Posted on: {watch.date.slice(0, 10)} </h5>
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Seller: {watch.userName}</h5>
-                                        </a>                                        
+                                        </a>
                                         {
 
                                             user?.photoURL == "seller" ? (<div><p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{watch.details.slice(0, 100)}...</p>
@@ -162,7 +162,7 @@ const LuxuryWatches = () => {
 
                                                                     <br />
                                                                     <input className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit" value="Submit" />
-                                                                    <input onClick={() => setShowModal(false)} className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit" value="Cancel" />                                                                    
+                                                                    <input onClick={() => setShowModal(false)} className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit" value="Cancel" />
                                                                 </form>
                                                             </div>
 

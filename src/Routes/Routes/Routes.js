@@ -18,7 +18,7 @@ export const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
-        loader: () => fetch(`http://localhost:5000/watches`)
+        loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
     },
     {
         path: '/homepage',
@@ -27,42 +27,42 @@ export const routes = createBrowserRouter([
             {
                 path: '/homepage/rolex',
                 element: <Rolex></Rolex>,
-                loader: () => fetch(`http://localhost:5000/watches`)
+                loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
             },
             {
                 path: '/homepage/private/rolex',
                 element: <PrivateRoute><Rolex></Rolex></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/watches`)
+                loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
             },
             {
                 path: '/homepage/omega',
                 element: <Omega></Omega>,
-                loader: () => fetch(`http://localhost:5000/watches`)
+                loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
             },
             {
                 path: '/homepage/private/omega',
                 element: <PrivateRoute><Omega></Omega></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/watches`)
+                loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
             },
             {
                 path: '/homepage/luxurywatches',
                 element: <LuxuryWatches></LuxuryWatches>,
-                loader: () => fetch(`http://localhost:5000/watches`)
+                loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
             },
             {
                 path: '/homepage/private/luxurywatches',
                 element: <PrivateRoute><LuxuryWatches></LuxuryWatches></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/watches`)
+                loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
             },
             {
                 path: '/homepage/vintagerolex',
                 element: <VintageRolex></VintageRolex>,
-                loader: () => fetch(`http://localhost:5000/watches`)
+                loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
             },
             {
                 path: '/homepage/private/vintagerolex',
                 element: <PrivateRoute><VintageRolex></VintageRolex></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/watches`)
+                loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
             },
             {
                 path: '/homepage/addproducts',
@@ -71,17 +71,17 @@ export const routes = createBrowserRouter([
             {
                 path: '/homepage/myproduct',
                 element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/watches`)
+                loader: () => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches`)
             },
             {
                 path: '/homepage/myproduct/:id',
                 element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>,
-                loader: (params) => fetch(`http://localhost:5000/watches/${params.id}`)
+                loader: (params) => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches/${params.id}`)
             },
             {
                 path: '/homepage/myorders',
                 element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>,
-                loader: (params) => fetch(`http://localhost:5000/bookings`)
+                loader: (params) => fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/bookings`)
             },
         ]
     },

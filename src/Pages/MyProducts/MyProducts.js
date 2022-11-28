@@ -17,7 +17,7 @@ const MyProducts = () => {
         console.log(agree);
         if (agree) {
             console.log("Deleting", name);
-            fetch(`http://localhost:5000/watches/${id}`, {
+            fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
@@ -41,7 +41,7 @@ const MyProducts = () => {
 
 
     const handleAdvertise = id => {
-        fetch(`http://localhost:5000/watches/${id}`, {
+        fetch(`https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

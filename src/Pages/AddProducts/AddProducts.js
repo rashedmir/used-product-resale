@@ -20,7 +20,7 @@ const AddProducts = () => {
         // console.log(user);
 
 
-        fetch('http://localhost:5000/watches', {
+        fetch('https://b612-used-products-resale-server-side-rashedmir.vercel.app/watches', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

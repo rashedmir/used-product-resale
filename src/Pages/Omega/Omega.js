@@ -43,7 +43,7 @@ const Omega = () => {
             watch_picture
         }
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://b612-used-products-resale-server-side-rashedmir.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -100,7 +100,7 @@ const Omega = () => {
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Years of use: {date.getFullYear() - watch.year_of_purchase}</h5>
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Posted on: {watch.date.slice(0, 10)} </h5>
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Seller: {watch.userName}</h5>
-                                        </a>                                        
+                                        </a>
                                         {
 
                                             user?.photoURL == "seller" ? (<div><p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{watch.details.slice(0, 100)}...</p>
