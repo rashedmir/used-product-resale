@@ -30,7 +30,7 @@ const AddProducts = () => {
             .then(res => res.json())
             .then(data => {
                 setTimeout(() => navigate(from, { replace: true }), 2000)
-                toast.success('Service added successfully', {
+                toast.success('Watch added successfully', {
                     position: "top-center",
                     autoClose: 1000,
                     hideProgressBar: false,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import video from '../assets/Homepage_video.mp4'
+import useTitle from '../Hooks/useTitle';
 import Footer from '../Shared/Footer/Footer';
 import Navbar from '../Shared/Navbar/Navbar';
 import TopBanner from '../Shared/TopBanner/TopBanner';
@@ -8,6 +9,7 @@ import './Main.css'
 import Subscribe from './Subscribe';
 
 const Main = () => {
+    useTitle("Trash to Treasure")
     const watches = useLoaderData();
     var count = 0;
     console.log(count);
@@ -169,7 +171,7 @@ const Main = () => {
                 <div className='flex flex-wrap gap-10 w-full justify-around px-36'>
                     {
                         watches.map(watch => {
-                            return (<div key={watch._id} className={`flex flex-wrap w-96 mb-5 py-2 ${watch.advertised == "true" ? '' : 'hidden'}`}>
+                            return (<div key={watch._id} className={`flex flex-wrap w-96 mb-5 py-2 ${watch.advertised == "true" ? '' : 'hidden'} ${watch.purchased == "true" ? 'hidden' : ''}`}>
                                 {watch.advertised == "true" && (<div class="flex flex-col max-w-sm">
 
                                     <div className='flex justify-center'>

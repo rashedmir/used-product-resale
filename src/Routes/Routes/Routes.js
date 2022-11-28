@@ -12,6 +12,7 @@ import Rolex from '../../Pages/Rolex/Rolex';
 import LuxuryWatches from '../../Pages/LuxuryWatches/LuxuryWatches'
 import MyProducts from '../../Pages/MyProducts/MyProducts'
 
+
 export const routes = createBrowserRouter([
     {
         path: '/',
@@ -28,8 +29,18 @@ export const routes = createBrowserRouter([
                 loader: () => fetch(`http://localhost:5000/watches`)
             },
             {
+                path: '/homepage/private/rolex',
+                element: <PrivateRoute><Rolex></Rolex></PrivateRoute>,
+                loader: () => fetch(`http://localhost:5000/watches`)
+            },
+            {
                 path: '/homepage/omega',
                 element: <Omega></Omega>,
+                loader: () => fetch(`http://localhost:5000/watches`)
+            },
+            {
+                path: '/homepage/private/omega',
+                element: <PrivateRoute><Omega></Omega></PrivateRoute>,
                 loader: () => fetch(`http://localhost:5000/watches`)
             },
             {
@@ -38,8 +49,18 @@ export const routes = createBrowserRouter([
                 loader: () => fetch(`http://localhost:5000/watches`)
             },
             {
+                path: '/homepage/private/luxurywatches',
+                element: <PrivateRoute><LuxuryWatches></LuxuryWatches></PrivateRoute>,
+                loader: () => fetch(`http://localhost:5000/watches`)
+            },
+            {
                 path: '/homepage/vintagerolex',
                 element: <VintageRolex></VintageRolex>,
+                loader: () => fetch(`http://localhost:5000/watches`)
+            },
+            {
+                path: '/homepage/private/vintagerolex',
+                element: <PrivateRoute><VintageRolex></VintageRolex></PrivateRoute>,
                 loader: () => fetch(`http://localhost:5000/watches`)
             },
             {

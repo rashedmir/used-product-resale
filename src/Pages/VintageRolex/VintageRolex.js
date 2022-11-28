@@ -1,7 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const VintageRolex = () => {
+    useTitle("Vintage Rolex")
     const watches = useLoaderData();
     const date = new Date();
     return (
@@ -18,7 +20,7 @@ const VintageRolex = () => {
             <div className='flex flex-wrap gap-10 py-10 w-full justify-around px-36'>
                 {
                     watches.map(watch => {
-                        return (<div className={`flex flex-wrap w-96 mb-5 py-2 ${watch.title == "Vintage Rolex" ? '' : 'hidden'}`}>
+                        return (<div className={`flex flex-wrap w-96 mb-5 py-2 ${watch.title == "Vintage Rolex" ? '' : 'hidden'} ${watch.purchased == "true" ? 'hidden' : ''}`}>
                             {watch.title == "Vintage Rolex" && (
                                 <div class="max-w-sm ">
                                     <div className='flex justify-center'>
@@ -38,7 +40,9 @@ const VintageRolex = () => {
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Seller: {watch.userName}</h5>
                                         </a>
                                         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{watch.details.slice(0, 100)}...</p>
-                                        <button className='bg-gray-700 w-full text-white ml-0 rounded p-3'>Book Now</button>
+                                        <Link to='/homepage/private/vintagerolex'>
+                                            <button className='bg-gray-700 w-full text-white ml-0 rounded p-3'>Book Now</button>
+                                        </Link>
                                     </div>
                                 </div>
                             )}
