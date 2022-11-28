@@ -6,6 +6,10 @@ Server-side code github repository: https://github.com/programming-hero-web-cour
 
 Live website link: https://used-products-resale-5d7f4.web.app
 
+admin username: admin
+
+admin password: asdfgh
+
 Feature:
 
 1. 6 different courses,
