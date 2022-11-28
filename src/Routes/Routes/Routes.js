@@ -11,6 +11,7 @@ import Omega from '../../Pages/Omega/Omega';
 import Rolex from '../../Pages/Rolex/Rolex';
 import LuxuryWatches from '../../Pages/LuxuryWatches/LuxuryWatches'
 import MyProducts from '../../Pages/MyProducts/MyProducts'
+import MyOrders from '../../Pages/BookingModal/MyOrders';
 
 
 export const routes = createBrowserRouter([
@@ -76,6 +77,11 @@ export const routes = createBrowserRouter([
                 path: '/homepage/myproduct/:id',
                 element: <PrivateRoute><MyProducts></MyProducts></PrivateRoute>,
                 loader: (params) => fetch(`http://localhost:5000/watches/${params.id}`)
+            },
+            {
+                path: '/homepage/myorders',
+                element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>,
+                loader: (params) => fetch(`http://localhost:5000/bookings`)
             },
         ]
     },

@@ -9,22 +9,8 @@ const MyProducts = () => {
     useTitle("My Products")
     const { user } = useContext(AuthContext);
     console.log(user.photoURL);
-    // const navigate = useNavigate();
-    // const [advertise, setAdvertise] = useState({});
     const watches = useLoaderData();
     const date = new Date();
-
-    // const AllWatches = () => {
-    // const { data: watch = [], refetch } = useQuery({
-    //     // queryKey: ['watches'],
-    //     queryFn: async () => {
-    //         const res = await fetch('http://localhost:5000/watches')
-    //         const data = await res.json();
-    //         console.log(data);
-    //         return data;
-    //     }
-    // })
-    // }
 
     const handleDelete = (id, name) => {
         const agree = window.confirm(`Are you sure you want to delete: ${name}`)
@@ -77,60 +63,16 @@ const MyProducts = () => {
             })
     }
 
-
-
-    // console.log(watches.advertised);
-
-    // const handleUpdateAdvertise = (event, _id) => {
-    //     event.preventDefault();
-    //     console.log(event, _id);
-    //     fetch(`http://localhost:5000/watches/${_id}`, {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(advertise)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.modifiedCount > 0) {
-    //                 console.log(data);
-    //                 // alert("Updated successfully")
-    //                 // setTimeout(() => navigate(from, { replace: true }), 2000)
-    //                 // toast.success('Review updated Successfully', {
-    //                 //     position: "top-center",
-    //                 //     autoClose: 1000,
-    //                 //     hideProgressBar: false,
-    //                 //     closeOnClick: true,
-    //                 //     pauseOnHover: true,
-    //                 //     draggable: true,
-    //                 //     progress: undefined,
-    //                 // });
-
-    //             }
-    //         })
-
-    // }
-
-    // const handleInputBlur = event => {
-    //     const field = event.target.name;
-    //     const value = event.target.value;
-    //     const newCategory = { ...advertise.id};
-    //     newCategory[field] = value;
-    //     setAdvertise(newCategory);
-
-    // }
-
     return (
 
         <div className='flex flex-wrap gap-10 py-10 w-full justify-around px-36'>
             {watches.map(watch => {
                 return (
-                    <div className={`flex flex-wrap w-96 mb-5 py-2 ${user.displayName == watch.userName ? '' : 'hidden'}`}>
+                    <div className={`flex flex-wrap w-96 mb-5 py-2 ${user.uid == watch.userID ? '' : 'hidden'}`}>
                         {
-                            user.displayName == watch.userName && (
+                            user.uid == watch.userID && (
                                 <div class="flex flex-col max-w-sm ">
-                                    <div className='text-right'><button onClick={()=>handleDelete(watch._id, watch.name)} className='text-4xl text-red-500 font-bold rounded px-1 pt-0'>×</button></div>
+                                    <div className='text-right'><button onClick={() => handleDelete(watch._id, watch.name)} className='text-4xl text-red-500 font-bold rounded px-1 pt-0'>×</button></div>
                                     <div className='flex justify-center'>
                                         <a href="/">
                                             <img class="rounded-t-lg w-48 py-5 h-80" src={watch.picture} alt="" />
@@ -159,16 +101,6 @@ const MyProducts = () => {
                                                 :
                                                 (
                                                     <div>
-                                                        {/* <form>
-                                                            <label for="advertised" className='font1 text-sm font-bold'>Advertisement option</label>
-                                                            <select onBlur={handleInputBlur} name="advertised" id="advertised" className='font1' required>
-                                                                
-                                                                <option value="">Please choose</option>
-                                                                <option value="true">Advertise</option>
-                                                                <option value="false">Remove Advertise</option>
-                                                            </select>
-                                                            <button onSubmit={()=>handleUpdateAdvertise(watch._id)}>ok</button>
-                                                        </form> */}
                                                         <button onClick={() => handleAdvertise(watch._id)} className='bg-gray-400 text-white rounded-full px-4 font-bold p-3 font1'>Advertise</button>
                                                         <button className='bg-gray-400 text-white rounded-full px-9 p-3 font-bold font1'>Sold</button>
                                                         <ToastContainer

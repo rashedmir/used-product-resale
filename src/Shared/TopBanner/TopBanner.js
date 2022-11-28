@@ -46,7 +46,7 @@ const TopBanner = () => {
                                     <div className='flex items-center'>
                                         <img className='w-5 mx-2' src={certified} alt='' />
                                         <h2 className='mr-5'>100% Certified Authentic</h2>
-                                        <Link to=''><h2 className='mr-2'>My Orders</h2></Link>
+                                            <Link to='/homepage/myorders'><h2 className='mr-2'>My Orders</h2></Link>
                                         <button onClick={handleLogOut} className='my-0 ml-10 text-white'>Log Out</button>
                                         <p>{user.displayName}</p>
                                     </div>

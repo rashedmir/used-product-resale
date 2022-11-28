@@ -1,8 +1,9 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useId, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-// import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast, Flip, Slide, Zoom } from "react-toastify";
 
 const Rolex = () => {
     useTitle("Rolex")
@@ -24,8 +25,14 @@ const Rolex = () => {
         const phone = form.phone.value;
         const meetingLoc = form.meetingLoc.value;
         const booking_date = form.booking_date.value;
+        const buyerId = user?.uid;
+        const watchId = modalObject._id;
+        const watch_picture = modalObject.picture
 
         const booking = {
+
+            watchId,
+            buyerId,
             brand_name,
             product_name,
             username,
@@ -33,6 +40,7 @@ const Rolex = () => {
             phone,
             meetingLoc,
             booking_date,
+            watch_picture
         }
 
         fetch('http://localhost:5000/bookings', {
@@ -46,14 +54,16 @@ const Rolex = () => {
             .then(data => {
                 console.log(data);
                 setShowModal(false)
-                if (data.acknowledged) {
-                    // setTreatment(null);
-                    // toast.success('Booking confirmed');
-                    // refetch();
-                }
-                else {
-                    // toast.error(data.message)
-                }
+                setTimeout(() => window.location.reload(false), 2000)
+                toast.success('Booked successfully', {
+                    position: "top-center",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
             })
     }
 
@@ -94,9 +104,6 @@ const Rolex = () => {
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Posted on: {watch.date.slice(0, 10)} </h5>
                                             <h5 class="mb-2 text-lg font-medium tracking-tight text-gray-900 dark:text-white">Seller: {watch.userName}</h5>
                                         </a>
-                                        {/* <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{watch.details.slice(0, 100)}...</p>
-                                        <Link to='/homepage/private/rolex'><button onClick={() => setShowModal(true)} className='bg-gray-700 w-full text-white ml-0 rounded p-3'>Book Now</button></Link> */}
-
                                         {
 
                                             user?.photoURL == "seller" ? (<div><p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{watch.details.slice(0, 100)}...</p>
@@ -128,34 +135,36 @@ const Rolex = () => {
                                                             <div>
                                                                 <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
                                                                 <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 m-24'>
-                                                                    <input name='brand_name' type="text" defaultValue={"Brand: " + modalObject.title} disabled className="text-lg font-bold border-transparent w-full" />
-                                                                    <input name='product_name' type="text" defaultValue={"Product Name: " + modalObject.name} disabled className="text-lg font-bold border-transparent w-full" />
-                                                                    <input name='username' type="text" defaultValue={"Customer Name: " + user?.displayName} disabled placeholder="Your Name" className="text-lg font-bold border-transparent" />
-                                                                    <input name='email' type="text" defaultValue={"Email: " + user?.email} disabled placeholder="Email Address" className="text-lg font-bold border-transparent" />
-                                                                    <input name='resale_price' type="text" defaultValue={"Resale Price: $" + modalObject.resale_price} disabled placeholder="Email Address" className="text-lg font-bold border-transparent" />
-                                                                    <input name='phone' type="number" placeholder="Phone Number" required className="input w-full input-bordered" />
-                                                                    <input name='meetingLoc' type="text" placeholder="Watch Pick up location" required className="input w-full input-bordered" />
-                                                                    <input name='booking_date' type="text" value={date} disabled className="input w-full input-bordered" />
+                                                                    <div className='flex items-center'>
+                                                                        <label className='font1 font-bold' for='brand_name'>Brand:</label>
+                                                                        <input name='brand_name' type="text" defaultValue={modalObject.title} disabled className="font1 text-lg border-transparent w-full" />
+                                                                    </div>
+                                                                    <div className='flex items-center'>
+                                                                        <label className='font1 font-bold' for='product_name'>Product Name:</label>
+                                                                        <input name='product_name' type="text" defaultValue={modalObject.name} disabled className="text-lg font1 border-transparent w-full" />
+                                                                    </div>
+                                                                    <div className='flex items-center'>
+                                                                        <label className='font1 font-bold' for='username'>Customer Name:</label>
+                                                                        <input name='username' type="text" defaultValue={user?.displayName} disabled placeholder="Your Name" className="text-lg font1 border-transparent" />
+                                                                    </div>
+                                                                    <div className='flex items-center'>
+                                                                        <label className='font1 font-bold' for='email'>Email:</label>
+                                                                        <input name='email' type="text" defaultValue={user?.email} disabled placeholder="Email Address" className="text-lg font1 border-transparent" />
+                                                                    </div>
+                                                                    <div className='flex items-center'>
+                                                                        <label className='font1 font-bold' for='resale_price'>Price: $</label>
+                                                                        <input name='resale_price' type="text" defaultValue={modalObject.resale_price} disabled placeholder="Email Address" className="text-lg font1 border-transparent" />
+                                                                    </div>
+                                                                    <input name='phone' type="number" placeholder="Phone Number" required className="input w-full rounded-md input-bordered" />
+                                                                    <input name='meetingLoc' type="text" placeholder="Watch Pick up location" required className="input w-full rounded-md input-bordered" />
+                                                                    <div className='flex items-center'>
+                                                                        <label className='font1 font-bold' for='resale_price'>Booking date:</label>
+                                                                        <input name='booking_date' type="text" defaultValue={date} disabled className="input font1 w-full border-transparent input-bordered" />
+                                                                    </div>
+
                                                                     <br />
                                                                     <input className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit" value="Submit" />
                                                                     <input onClick={() => setShowModal(false)} className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="submit" value="Cancel" />
-                                                                    {/* footer
-                                                                    <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">
-                                                                        <button
-                                                                            className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                                            type="button"
-                                                                            onClick={() => setShowModal(false)}
-                                                                        >
-                                                                            Close
-                                                                        </button>
-                                                                        <button
-                                                                            className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                                            type="button"
-                                                                            onClick={() => setShowModal(false)}
-                                                                        >
-                                                                            Save Changes
-                                                                        </button>
-                                                                    </div> */}
                                                                 </form>
                                                             </div>
 
@@ -165,17 +174,23 @@ const Rolex = () => {
                                                 <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
                                             </>
                                         )}
-
+                                        <ToastContainer
+                                            theme="dark"
+                                            position="top-center"
+                                            autoClose={3000}
+                                            hideProgressBar={false}
+                                            newestOnTop={false}
+                                            closeOnClick
+                                            rtl={false}
+                                            pauseOnFocusLoss={false}
+                                            draggable
+                                            pauseOnHover
+                                        />
                                     </div>
                                 </div>
                             </>)}
                         </div>)
                     })
-                }
-            </div>
-            <div>
-                {
-
                 }
             </div>
         </div>
