@@ -7,8 +7,8 @@ const TermsAndConditions = () => {
     return (
       <div>
         {/* <Header></Header> */}
-        <div className="mx-80 mt-5 mb-10 text-justify">
-          <div className="text-center text-5xl font-bold underline mb-5 text-gray-500">
+        <div className="mx-8 md:mx-80 mt-5 mb-10 text-justify">
+          <div className="text-center text-3xl md:text-5xl font-bold underline mb-5 text-gray-500">
             <h1>Terms & conditions</h1>
           </div>
           <h2 className="text-gray-500">
