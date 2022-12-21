@@ -4,7 +4,7 @@ import logo from '../../assets/logot2t.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="flex justify-between items-center footer p-10 bg-zinc-800 text-white px-56 pb-14">
+            <footer className="flex justify-between items-center footer p-10 bg-zinc-800 text-white pl-14 md:px-56 pb-14">
                 <div>
                     <img className='w-36' src={logo} alt='footer_img'/>
                     <p>Providing 100% authentic products</p>

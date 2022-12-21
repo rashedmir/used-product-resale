@@ -62,12 +62,12 @@ const Register = () => {
                 {/* <Header></Header> */}
                 <div className=''>
                     <Link to='/'>
-                        <div className='flex items-center mb-5 mt-14'>
-                            <img className='w-28  rounded-lg' src={logo} alt='img' />
+                        <div className='flex items-center mb-5 mt-5 md:mt-14'>
+                            <img className='w-48 rounded-lg' src={logo} alt='img' />
                         </div>
                     </Link>
                 </div>
-                <div className='flex flex-col items-center md:w-1/3 bg-white rounded-lg mx-16 text-gray-800 p-5 mb-16 border-2'>
+                <div className='flex flex-col items-center w-4/5 md:w-1/3 bg-white rounded-lg mx-16 text-gray-800 p-5 mb-16 border-2'>
                     <div>
                         <h1 className='font-bold text-3xl mb-2'>Register account</h1>
                     </div>
@@ -75,9 +75,9 @@ const Register = () => {
                         <p className='mb-5'>Already have an account? <Link className='text-blue-600' to='/login'>Log In</Link></p>
                     </div>
                     <div className='flex flex-row items-center mt-5'>
-                        <hr className='border-2 w-60 mr-5'></hr>
+                        <hr className='border-2 w-24 md:w-60 mr-5'></hr>
                         <p className='font-bold text-2xl text-gray-300'>or</p>
-                        <hr className='border-2 w-60 ml-5'></hr>
+                        <hr className='border-2 w-24 md:w-60 ml-5'></hr>
                     </div>
                     <form onSubmit={handleSubmit} className='w-11/12 mt-8'>
                         <div className="mb-6">
@@ -121,7 +121,7 @@ const Register = () => {
                             <input onClick={handleAccepted} id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                             <label for="default-checkbox" className="ml-2 text-sm font-medium text-gray-900 ">{<>Accept <Link className='text-blue-600' to="/terms">Terms & conditions</Link></>}</label>
                         </div>
-                        <button type="submit" disabled={!accepted} className="disabled:bg-gray-400 text-white bg-blue-700 focus:ring-4 focus:outline-none 
+                        <button type="submit" disabled={!accepted} className="ml-0 disabled:bg-gray-400 text-white bg-blue-700 focus:ring-4 focus:outline-none 
                         focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Sign up</button>
                         <div>{error}</div>
                     </form>
